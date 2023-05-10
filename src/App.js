@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import CardGrid from './Components/CardGrid';
+import Navbar from './Components/Navbar';
+import ProductListing from './Components/ProductListing';
+import ProductDetails from './Components/ProductDetails';
+import {Router, Route} from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+      <Navbar />
+      <CardGrid/>
+    
+      <Route path='/' component={ProductListing}/>
+      <Route path='/product/:productId' component={ProductDetails}/>
+      <Route>404 Not Found</Route>
+      
+      </Router>
     </div>
   );
 }
