@@ -1,6 +1,6 @@
 import { React, useEffect } from 'react';
 import axios from 'axios';
-import { SearchFilter } from './SearchFilter.js';
+// import { SearchFilter } from './SearchFilter.js';
 
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 import ProductComponent from './ProductComponent';
@@ -23,7 +23,7 @@ function ProductListing() {
     fetchProducts();
   }, []);
 
-  //  console.log("Product:" ,products);
+   console.log("Product:" ,products);
 
   return (
     <>
